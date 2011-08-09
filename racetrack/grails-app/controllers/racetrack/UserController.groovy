@@ -97,4 +97,8 @@ class UserController {
             redirect(action: "list")
         }
     }
+	
+	def login = {}
+	def logout = {}
+	def authenticate = {}
 }
