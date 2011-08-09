@@ -1,6 +1,8 @@
 package racetrack
 
 class Race {
+	
+	static hasMany = [registrations:Registration]
 
 	String name
 	Date startDate
@@ -21,6 +23,10 @@ class Race {
 	}
 	
 	static mapping = { sort "startDate" }
+	
+	String toString() {
+		return "${name}, ${startDate.format('MM/dd/yyy')}"
+	}
 	
 	BigDecimal inMiles() {
 		return distance * 0.6214
