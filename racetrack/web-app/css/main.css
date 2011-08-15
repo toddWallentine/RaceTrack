@@ -298,3 +298,11 @@ margin-bottom: 1em;
 margin-top: 1em;
 clear: both;
 }
+
+#loginHeader {
+float: right;
+color: #fff;
+}
+#loginHeader a{
+color: #fff;
+}

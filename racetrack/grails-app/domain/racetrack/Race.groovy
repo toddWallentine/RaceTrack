@@ -3,6 +3,8 @@ package racetrack
 class Race {
 	
 	static hasMany = [registrations:Registration]
+	
+	static searchable = true
 
 	String name
 	Date startDate

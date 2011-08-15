@@ -1,6 +1,7 @@
 import racetrack.Runner
 import racetrack.Race
 import racetrack.Registration
+import racetrack.User
 
 import grails.util.GrailsUtil
 
@@ -33,6 +34,18 @@ class BootStrap {
 				reg.save()
 				if(reg.hasErrors()) {
 					println reg.errors
+				}
+				
+				def admin = new User(login:"admin", password:"wordpass", role:"admin")
+				admin.save()
+				if(admin.hasErrors()) {
+					println admin.errors
+				}
+				
+				def todd = new User(login:"todd", password:"tool13", role:"user")
+				todd.save()
+				if(todd.hasErrors()) {
+					println todd.errors
 				}
 				
 				break;
