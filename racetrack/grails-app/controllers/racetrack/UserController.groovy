@@ -17,7 +17,7 @@ class UserController {
 			return false
 		}
 		if(!session.user.admin){
-			flash.message = "Tsk tsk—admins only"
+			flash.message = "Tsk tsk-admins only"
 			redirect(controller:"race", action:"list")
 			return false
 		}
@@ -131,7 +131,11 @@ class UserController {
 		if(user){
 			session.user = user
 			flash.message = "Hello ${user.login}!"
-			redirect(controller:"race", action:"list")
+			if(user.admin) {
+				redirect(controller:"admin", action:"index")
+			} else {
+				redirect(controller:"race", action:"list")
+			}
 		} else {
 			flash.message = "Sorry, ${params.login}. Please try again."
 			redirect(action:"login")
